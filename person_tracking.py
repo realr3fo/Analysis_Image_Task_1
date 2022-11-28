@@ -115,11 +115,12 @@ def find_person_from_beach_image(file_name: str, show_plot: bool = True):
         x, y, w, h = box[0], box[1], box[2], box[3]
         cv2.rectangle(image_copy, (x, y), (x + w, y + h), (200, 0, 0), 1)
     if show_plot:
-        _, axs = plt.subplots(2, 2)
-        axs[0, 0].imshow(lifeguard_morphed, cmap="gray")
-        axs[0, 1].imshow(roi_processed, cmap="gray")
-        axs[1, 0].imshow(cv2.cvtColor(image_copy, cv2.COLOR_BGR2RGB))
-        axs[1, 1].imshow(cv2.cvtColor(original_img, cv2.COLOR_BGR2RGB))
+        _, ax = plt.subplots()
+        ax.imshow(cv2.cvtColor(image_copy, cv2.COLOR_BGR2RGB))
+        plt.axis("off")
+        title = "Person detection for " + file_name
+        plt.title(title)
+        plt.gcf().set_dpi(300)
         plt.show()
     return boxes
 
