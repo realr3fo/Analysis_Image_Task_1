@@ -63,7 +63,7 @@ def find_person_from_beach_image(file_name: str, show_plot: bool = True):
     roi_morphed = cv2.morphologyEx(roi_thresh, cv2.MORPH_ERODE, KERNEL_4)
     roi_processed = cv2.morphologyEx(roi_morphed, cv2.MORPH_DILATE, KERNEL_3)
 
-    # Process lifeguard rergion the same way as previous one,
+    # Process lifeguard region the same way as previous one,
     # but with different configuration
     roi_copy = roi.copy()
     lifeguard = roi_copy[:225, 1285:]
@@ -126,5 +126,5 @@ def find_person_from_beach_image(file_name: str, show_plot: bool = True):
 
 
 if __name__ == "__main__":
-    file_name = "./dataset/1660046400.jpg"
+    file_name = "./dataset/1660050000.jpg"
     find_person_from_beach_image(file_name, True)
