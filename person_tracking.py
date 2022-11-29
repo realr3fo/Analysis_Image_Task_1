@@ -120,7 +120,7 @@ def find_person_from_beach_image(file_name: str, show_plot: bool = True):
         plt.axis("off")
         title = "Person detection for " + file_name
         plt.title(title)
-        plt.gcf().set_dpi(300)
+        plt.gcf().set_dpi(150)
         plt.show()
     return boxes
 
